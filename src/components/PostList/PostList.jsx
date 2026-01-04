@@ -9,7 +9,7 @@ export const PostList = () => {
 
   const posts = postsFromServer.map(post => ({
     ...post,
-    user: users.find(user => user.id === post.userId ?? null),
+    user: users.find(user => user.id === post.userId),
     comments: commentsFromServer.filter(comment => comment.postId === post.id),
   }));
 
